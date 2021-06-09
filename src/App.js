@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import Navbar from "./components/Navbar/Navbar";
+import AddEmployeeForm from "./components/EmployeeForm/AddEmployeeForm";
 
 function App() {
   
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Contact />
+          </Route>
+          <Route exact path="/employee/add">
+            <AddEmployeeForm />
           </Route>
         </Switch>
       </div>

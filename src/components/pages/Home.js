@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Home() {
   const [users, setUsers] = useState([]);
+  
 
   //fetch data from json server// GET method
   useEffect(() => {
@@ -26,12 +27,17 @@ function Home() {
           </thead>
 
           <tbody>
-            {users.map((user, idx) => (
+            {users.map((user, idx) => ( //implemented map ocer users to show single user to table in dom//
               <tr>
                 <th scope="row">{idx + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
+                <td>
+                  <button class="btn btn-danger mx-2" >View</button>
+                  <button class="btn btn-primary mx-2">Edit</button>
+                  <button class="btn btn-danger mx-2">Delete</button>
+                </td>
               </tr>
             ))}
           </tbody>
