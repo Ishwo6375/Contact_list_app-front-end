@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 function Home() {
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
   //fetch data from json server// GET method
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
-      .then((userData) => setUser(userData));
+      .then((userData) => setUsers(userData));
   }, []);
 
-  //mapping users data to show to Dom
-
-  
   return (
     <div className="container">
       <div className="py-4">
@@ -27,22 +24,17 @@ function Home() {
               <th scope="col">Action</th>
             </tr>
           </thead>
-            
+
           <tbody>
-        
-          {
-            users.map((user, idx) => {
-               <tr>
+            {users.map((user, idx) => (
+              <tr>
                 <th scope="row">{idx + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
-                </tr>
-            })
-          }
-             
-          
-         </tbody>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
