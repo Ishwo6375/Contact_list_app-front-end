@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Home() {
-  const [users, setUser] = useState([]);
+  const [user, setUser] = useState([]);
 
   //fetch data from json server// GET method
   useEffect(() => {
@@ -27,17 +27,22 @@ function Home() {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
             
-        {users.map((user, idx) => (
-              <tr>
+          <tbody>
+        
+          {
+            users.map((user, idx) => {
+               <tr>
                 <th scope="row">{idx + 1}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 </tr>
-           
-          </tbody>
+            })
+          }
+             
+          
+         </tbody>
         </table>
       </div>
     </div>
