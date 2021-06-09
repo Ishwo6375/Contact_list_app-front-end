@@ -12,17 +12,7 @@ function Home() {
 
   //mapping users data to show to Dom
 
-  function populateUsers() {
-    users.map((user, idx) => {
-      <tr>
-        <th >{idx + 1}</th>
-        <td>{user.name}</td>
-        <td>{user.username}</td>
-        <td>{user.email}</td>
-      </tr>;
-    });
-  }
-
+  
   return (
     <div className="container">
       <div className="py-4">
@@ -38,24 +28,15 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {populateUsers()}
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            
+        {users.map((user, idx) => (
+              <tr>
+                <th scope="row">{idx + 1}</th>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                </tr>
+           
           </tbody>
         </table>
       </div>
