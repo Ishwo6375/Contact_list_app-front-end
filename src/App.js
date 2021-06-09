@@ -1,12 +1,17 @@
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import Home from "./components/pages/Home";
 function App() {
 
+return(
+<div>
+  <Home />
+</div>
 
+)
 
-  return <div>
-      <h1>App testing</h1>
-  </div>;
+ 
+ 
 }
 
 export default App;
