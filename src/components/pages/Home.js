@@ -27,7 +27,7 @@ function Home() {
           </thead>
 
           <tbody>
-            {users.map((user, idx) => ( //implemented map ocer users to show single user to table in dom//
+            {users.map((user, idx) => ( //implemented map over users to show single user to table in dom//
               <tr>
                 <th scope="row">{idx + 1}</th>
                 <td>{user.name}</td>
