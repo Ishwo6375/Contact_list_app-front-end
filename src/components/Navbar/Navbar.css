@@ -1,0 +1,16 @@
+.nav-bar{
+    border: 1px solid rgb(47, 36, 36);
+    background-color: rgb(35, 39, 39);
+    padding: 10px;
+}
+.nav-heading{
+    text-align: center;;
+    color:rgb(237, 236, 245)
+}
+
+.nav-items{
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(239, 240, 241);
+    font-weight: bold;
+}
