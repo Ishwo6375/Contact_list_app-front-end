@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React  from "react";
 
-function AddEmployeeForm({onHandleChange, user }) {
-  
 
+function AddEmployeeForm({ onHandleChange, user, onSubmitUser }) {
+    
   //desturcting name, username, email and phone to user//
-  const {name, username, email, phone} = user;
+  const { name, username, email, phone } = user;
 
   return (
     <div className="div-container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="add-hire">Add New Hire</h2>
 
-        <form >
+        <form onSubmit={onSubmitUser}>
           <div>
             <input
               className="my-2"
