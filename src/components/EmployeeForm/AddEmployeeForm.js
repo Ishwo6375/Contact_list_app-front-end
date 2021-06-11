@@ -1,9 +1,7 @@
-import React  from "react";
-
+import React from "react";
 
 function AddEmployeeForm({ onHandleChange, user, onSubmitUser }) {
-    
-  //desturcting name, username, email and phone to user//
+  //Array desturcting name, username, email and phone to user//
   const { name, username, email, phone } = user;
 
   return (

@@ -18,7 +18,7 @@ function NavBar() {
         </NavLink>
       </div>
      
-      <Link className="btn btn-danger" to="/employee/add">New Hire</Link>
+      <Link className="btn btn-danger" to="/EmployeeForm/add">New Hire</Link>
      
     </nav>
   );

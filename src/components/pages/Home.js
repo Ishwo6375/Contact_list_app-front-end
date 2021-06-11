@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+
+
 function Home() {
   const [users, setUsers] = useState([]);
   
@@ -10,6 +12,24 @@ function Home() {
       .then((res) => res.json())
       .then((userData) => setUsers(userData));
   }, []);
+
+
+function deleteEmployee(id){
+  alert(id)
+}
+
+  //  function deleteEmployee(userId) {
+  //   const URL = `http://localhost:3000/users/${userId}`; 
+  //   const config = { method: "DELETE" };
+  //   fetch(URL, config)
+  //     .then(r => r.json())
+  //     .then(() => {
+  //       const newUsers = users.filter(user => user.id !== userId);
+  //       setUsers(newUsers);
+  //     })
+  // }
+
+  
 
   return (
     <div className="container">
@@ -28,15 +48,16 @@ function Home() {
 
           <tbody>
             {users.map((user, idx) => ( //implemented map over users to show single user to table in dom//
-              <tr>
-                <th scope="row">{idx + 1}</th>
+              <tr key={idx}>
+                {/* <th scope="row">{idx + 1}</th> */}
+                <th scope="row">{user.id}</th>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
                   <button class="btn btn-danger mx-2" >View</button>
                   <button class="btn btn-primary mx-2">Edit</button>
-                  <button class="btn btn-danger mx-2">Delete</button>
+                  <button onClick={()=>deleteEmployee(user.id)} class="btn btn-danger mx-2">Delete</button>
                 </td>
               </tr>
             ))}
