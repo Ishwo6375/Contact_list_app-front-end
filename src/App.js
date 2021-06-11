@@ -36,21 +36,19 @@ function App() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name: user.name,
-        username: user.username,
-        email: user.email,
-        phone: user.phone,
-      }),
+      body: JSON.stringify(user),
     };
 
     fetch("http://localhost:3000/users", config)
       .then((res) => res.json())
       .then((newUser) => {
         const newUsers = [user, newUser];
-        setUsers(newUsers.reverse());
+        setUsers(newUsers);
       });
   }
+
+
+  
 
 
  
@@ -80,8 +78,8 @@ function App() {
           <Route exact path="/UserForm/edit">
             <EditUserForm 
             onHandleChange={onHandleChange}
-              user={user}
-              
+            user={user}
+           
              />
           </Route>
         </Switch>

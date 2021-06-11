@@ -4,6 +4,10 @@ function EditUserForm({ onHandleChange, user }) {
   //Array desturcting name, username, email and phone to user//
   const {  name, username, email, phone } = user;
 
+
+ 
+ 
+
   return (
     <div className="div-container">
       <div className="w-75 mx-auto shadow p-5">
@@ -54,7 +58,7 @@ function EditUserForm({ onHandleChange, user }) {
             />
           </div>
 
-          <button className="my-2 btn-primary">Update Employee</button>
+          <button  className="my-2 btn-primary">Update Employee</button>
         </form>
       </div>
     </div>

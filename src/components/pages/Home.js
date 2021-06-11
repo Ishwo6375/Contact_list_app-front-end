@@ -3,6 +3,7 @@ import {  Link } from "react-router-dom";
 
 
 
+
 function Home() {
 
  
@@ -37,6 +38,8 @@ function Home() {
   })
   
  }
+
+  
 
  
    
@@ -76,6 +79,7 @@ function Home() {
           </tbody>
         </table>
       </div>
+      
     </div>
   );
 }
