@@ -7,20 +7,20 @@ function NavBar() {
     <nav className="nav-bar">
       <div>
         <h3 className="nav-heading">Amazon Employee Details</h3>
-        <NavLink className="nav-items"  to="/">
+        <NavLink className="nav-items" to="/">
           Home
         </NavLink>
-        <NavLink className="nav-items"  to="/about">
+        <NavLink className="nav-items" to="/about">
           About
         </NavLink>
-        <NavLink className="nav-items"  to="/contact">
+        <NavLink className="nav-items" to="/contact">
           Contact
         </NavLink>
       </div>
-     
-      <Link className="btn btn-danger mx-3" to="/UserForm/add">New Hire</Link>
-      
-     
+
+      <Link className="btn btn-danger mx-3" to="/UserForm/add">
+        New Hire
+      </Link>
     </nav>
   );
 }
