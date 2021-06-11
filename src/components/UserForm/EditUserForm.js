@@ -1,6 +1,6 @@
 import React from "react";
 
-function EditEmployeeForm({ onHandleChange, user, onSubmitEditEmployee }) {
+function EditUserForm({ onHandleChange, user }) {
   //Array desturcting name, username, email and phone to user//
   const {  name, username, email, phone } = user;
 
@@ -61,4 +61,4 @@ function EditEmployeeForm({ onHandleChange, user, onSubmitEditEmployee }) {
   );
 }
 
-export default EditEmployeeForm;
+export default EditUserForm;

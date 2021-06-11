@@ -7,8 +7,8 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import Navbar from "./components/Navbar/Navbar";
-import AddEmployeeForm from "./components/EmployeeForm/AddEmployeeForm";
-import EditEmployeeForm from "./components/EmployeeForm/EditEmployeeForm";
+import AddUserForm from "./components/UserForm/AddUserForm";
+import EditUserForm from "./components/UserForm/EditUserForm";
 
 
 
@@ -48,7 +48,7 @@ function App() {
       .then((res) => res.json())
       .then((newUser) => {
         const newUsers = [user, newUser];
-        setUsers(newUsers);
+        setUsers(newUsers.reverse());
       });
   }
 
@@ -70,15 +70,15 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
-          <Route exact path="/EmployeeForm/add">
-            <AddEmployeeForm
+          <Route exact path="/UserForm/add">
+            <AddUserForm
               onHandleChange={onHandleChange}
               user={user}
               onSubmitUser={onSubmitUser}
             />
           </Route>
-          <Route exact path="/EmployeeForm/edit">
-            <EditEmployeeForm 
+          <Route exact path="/UserForm/edit">
+            <EditUserForm 
             onHandleChange={onHandleChange}
               user={user}
               

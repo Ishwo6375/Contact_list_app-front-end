@@ -11,12 +11,32 @@ function Home() {
 
   //fetch data from json server// GET method
   useEffect(() => {
-    fetch("http://localhost:3000/users")
-      .then((res) => res.json())
-      .then((userData) => setUsers(userData));
+    getUsers();  
   }, []);
 
 
+  //this function is called at a first time and whenever delete api is done//
+  function getUsers(){ 
+      fetch("http://localhost:3000/users")
+      .then((res) => res.json())
+      .then((userData) => setUsers(userData));
+  }
+
+
+//Implementing Delete method to delete data from database//
+ function deleteUser(userId) {
+  fetch(`http://localhost:3000/users/${userId}`, {
+    method: 'DELETE'
+  }).then((res)=> {
+    res.json()
+    .then(() => {
+      const newUsers = users.filter(user => user.id !== userId)
+      setUsers(newUsers)
+      getUsers()
+    })
+  })
+  
+ }
 
  
    
@@ -41,15 +61,15 @@ function Home() {
           <tbody>
             {users.map((user, idx) => ( //implemented map over users to show single user to table in dom//
               <tr key={idx}>
-                <th scope="row">{user.id}</th>
+                <th scope="row">{idx + 1}</th>
+                {/* <th scope="row">{user.id}</th> */}
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>
-                  <button class="btn btn-danger mx-2" >View</button>
-                  <Link className="btn btn-danger mx-3" to="/EmployeeForm/edit">Edit User</Link>
-                  <button  class="btn btn-danger mx-2">Delete</button>
+                  <Link className="btn btn-danger mx-3" to="/UserForm/edit">Edit</Link>
+                  <button onClick={()=>deleteUser(user.id)} class="btn btn-danger mx-2">Delete</button>
                 </td>
               </tr>
             ))}
