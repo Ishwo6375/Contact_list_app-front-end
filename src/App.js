@@ -15,7 +15,7 @@ import EditEmployeeForm from "./components/EmployeeForm/EditEmployeeForm";
 function App() {
   //seeting useState to hold data from form//
   //setting initial value to empty string//
-
+ 
   const [user, setUsers] = useState({
     name: "",
     username: "",
@@ -54,6 +54,7 @@ function App() {
 
 
  
+ 
 
   return (
     <Router>
@@ -77,7 +78,11 @@ function App() {
             />
           </Route>
           <Route exact path="/EmployeeForm/edit">
-            <EditEmployeeForm />
+            <EditEmployeeForm 
+            onHandleChange={onHandleChange}
+              user={user}
+              
+             />
           </Route>
         </Switch>
       </div>
