@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -14,10 +14,34 @@ import EditUserForm from "./components/UserForm/EditUserForm";
 
 
 function App() {
-  //seeting useState to hold data from form//
-  //setting initial value to empty string//
- 
-  const [user, setUsers] = useState({
+   const [users, setUsers] = useState([]);
+
+  //fetch data from json server// GET method
+  
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  //this function is called at a first time and whenever delete api is done//
+  function getUsers() {
+    fetch("http://localhost:3000/users")
+      .then((res) => res.json())
+      .then((userData) => setUsers(userData));
+  }
+    
+     function deleteUser(userId) {
+    fetch(`http://localhost:3000/users/${userId}`, {
+      method: "DELETE",
+    }).then((res) => {
+      res.json().then(() => {
+        const newUsers = users.filter((user) => user.id !== userId);
+        setUsers(newUsers);
+        getUsers();
+      });
+    });
+  }
+
+  const [user, setUser] = useState({
     name: "",
     username: "",
     email: "",
@@ -25,7 +49,7 @@ function App() {
   });
 
   function onHandleChange(e) {
-    setUsers({...user, [e.target.name]: e.target.value });
+    setUser({...user, [e.target.name]: e.target.value });
   }
   
 
@@ -37,17 +61,21 @@ function App() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify({
+        name: user.name,
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+      }),
     };
 
     fetch("http://localhost:3000/users", config)
       .then((res) => res.json())
       .then((newUser) => {
         const newUsers = [user, newUser];
-        setUsers(newUsers);
+        setUser(newUsers);
       });
   }
-
 
   
 
@@ -61,7 +89,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home deleteUser={deleteUser} users={users}/>
           </Route>
           <Route exact path="/about">
             <About />
@@ -71,15 +99,15 @@ function App() {
           </Route>
           <Route exact path="/UserForm/add">
             <AddUserForm
-              onHandleChange={onHandleChange}
-              user={user}
-              onSubmitUser={onSubmitUser}
+              // onHandleChange={onHandleChange}
+              // user={user}
+              // onSubmitUser={onSubmitUser}
             />
           </Route>
-          <Route exact path="/UserForm/edit">
+          <Route exact path="/UserForm/edit/:id">
             <EditUserForm 
-            onHandleChange={onHandleChange}
-            user={user}
+            // onHandleChange={onHandleChange}
+            // user={user}
            
              />
           </Route>
