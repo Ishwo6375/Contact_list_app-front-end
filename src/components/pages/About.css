@@ -1,0 +1,15 @@
+.div-about{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(71, 67, 62);
+    color:white;
+    align-items: center;
+    /* width: 50%; */
+
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    color: cornflowerblue;
+}

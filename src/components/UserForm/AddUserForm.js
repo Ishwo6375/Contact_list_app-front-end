@@ -1,16 +1,9 @@
 // import React from "react";
-import React, { useState, useEffect } from "react";
+import React  from "react";
 
 
 function AddUserForm({onHandleChange, user, onSubmitUser}) {
   //Array desturcting name, username, email and phone to user//
-
-  //  const [user, setUsers] = useState({
-  //   name: "",
-  //   username: "",
-  //   email: "",
-  //   phone: "",
-  // });
   const {  name, username, email, phone } = user;
 
   // function onHandleChange(e) {
