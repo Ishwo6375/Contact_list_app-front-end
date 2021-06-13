@@ -7,7 +7,13 @@
 .nav-heading{
     text-align: center;
     color:rgb(237, 236, 245);
+    font-weight: bold;
+    font-family: serif;
     
+}
+
+.nav-heading:hover{
+    color:rgb(189, 230, 11);
 }
 
 .nav-items{

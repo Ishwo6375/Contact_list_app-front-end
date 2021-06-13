@@ -8,6 +8,10 @@ h1{
     color: rgb(83, 53, 53);
 }
 
+h1:hover{
+    color: rgb(86, 95, 221);
+}
+
 .table-css{
     font-weight: bold;
 }
