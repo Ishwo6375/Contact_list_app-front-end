@@ -8,7 +8,7 @@ function EditUserForm() {
 
   //seeting useState to hold data from form//
   //setting initial value to empty string//
-  const [user, setUser] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     username: "",
     email: "",
@@ -16,16 +16,16 @@ function EditUserForm() {
   });
 
  
-  //Array desturcting name, username, email and phone to user//
-  const { name, username, email, phone } = user;
+  //Array desturcting name, username, email and phone to formData//
+  const { name, username, email, phone } = formData;
 
   function onHandleChange(e) {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  const onSubmitUser = async (e) => {
+  const onSubmitEditUser = async (e) => {
     e.preventDefault();
-    await axios.patch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`, user);
+    await axios.patch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`, formData);
   };
 
   return (
@@ -33,7 +33,7 @@ function EditUserForm() {
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="add-hire">Edit Employee</h2>
 
-        <form onSubmit={onSubmitUser}>
+        <form onSubmit={onSubmitEditUser}>
           <div>
             <input
               className="my-2"

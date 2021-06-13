@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import "./Home.css"
 
 function Home() {
+  //setting initial state to empty array//
   const [users, setUsers] = useState([]);
 
  //fetch data from json server// GET method
@@ -31,7 +32,7 @@ function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="container bg">
       <div className="py-4">
         <h1>Employee Records</h1>
         <table class="table">
@@ -47,9 +48,8 @@ function Home() {
           </thead>
 
           <tbody>
-            {users.map(
-              ( user,idx ) => (
-                <tr key={idx}>
+            {users.map(( user,idx ) => ( //use map to users array to show single user to dom//
+                <tr key={idx} className="table-css">
                   <th scope="row">{idx + 1}</th>
                   {/* <th scope="row">{user.id}</th> */}
                   <td>{user.name}</td>
@@ -57,12 +57,10 @@ function Home() {
                   <td>{user.email}</td>
                   <td>{user.phone}</td>
                   <td>
-                    <Link className="btn btn-danger mx-3" to={`/UserForm/edit/${user.id}`}>
+                    <Link className="btn btn-primary mx-3" to={`/UserForm/edit/${user.id}`}>
                       Edit
                     </Link>
-                    <button
-                      onClick={() => deleteUser(user.id)}
-                      class="btn btn-danger mx-2">Delete</button>
+                    <button onClick={() => deleteUser(user.id)} class="btn btn-danger mx-2">Delete</button>
                   </td>
                 </tr>
               )

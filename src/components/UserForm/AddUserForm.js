@@ -1,9 +1,9 @@
 import React  from "react";
 
 
-function AddUserForm({onHandleChange, user, onSubmitUser}) {
-  //Array desturcting name, username, email and phone to user//
-  const {  name, username, email, phone } = user;
+function AddUserForm({onHandleChange, formData, onSubmitAddUser}) {
+  //Array desturcting name, username, email and phone to formData//
+  const {  name, username, email, phone } = formData;
 
 
   return (
@@ -11,7 +11,7 @@ function AddUserForm({onHandleChange, user, onSubmitUser}) {
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="add-hire">Add New Hire</h2>
 
-        <form onSubmit={onSubmitUser}>
+        <form onSubmit={onSubmitAddUser}>
           <div>
             <input
               className="my-2"

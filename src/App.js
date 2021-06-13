@@ -13,7 +13,7 @@ import EditUserForm from "./components/UserForm/EditUserForm";
 function App() {
 
   //setting initial value as empty string to hold form data//
-  const [user, setUser] = useState({
+  const [formData, setformData] = useState({
     name: "",
     username: "",
     email: "",
@@ -21,11 +21,11 @@ function App() {
   });
 
   function onHandleChange(e) {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setformData({ ...formData, [e.target.name]: e.target.value });
   }
 
   //Implementing POST method to add Employee
-  function onSubmitUser(e) {
+  function onSubmitAddUser(e) {
     e.preventDefault();
     const config = {
       method: "POST",
@@ -33,18 +33,18 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: user.name,
-        username: user.username,
-        email: user.email,
-        phone: user.phone,
+        name: formData.name,
+        username: formData.username,
+        email: formData.email,
+        phone: formData.phone,
       }),
     };
 
     fetch("https://contact-list-phase2-app.herokuapp.com/users", config)
       .then((res) => res.json())
       .then((newUser) => {
-        const newUsers = [user, newUser];
-        setUser(newUsers);
+        const newUsers = [formData, newUser];
+        setformData(newUsers);
       });
   }
 
@@ -65,8 +65,8 @@ function App() {
           <Route exact path="/UserForm/add">
             <AddUserForm
               onHandleChange={onHandleChange}
-              user={user}
-              onSubmitUser={onSubmitUser}
+              formData={formData}
+              onSubmitAddUser={onSubmitAddUser}
             />
           </Route>
           <Route exact path="/UserForm/edit/:id">
