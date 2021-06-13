@@ -1,33 +1,34 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Home({deleteUser, users}) {
-  // const [users, setUsers] = useState([]);
 
-  // //fetch data from json server// GET method
-  // useEffect(() => {
-  //   getUsers();
-  // }, []);
+function Home() {
+  const [users, setUsers] = useState([]);
 
-  // //this function is called at a first time and whenever delete api is done//
-  // function getUsers() {
-  //   fetch("http://localhost:3000/users")
-  //     .then((res) => res.json())
-  //     .then((userData) => setUsers(userData));
-  // }
+ //fetch data from json server// GET method
+  useEffect(() => {
+    getUsers();
+  }, []);
 
-  //Implementing Delete method to delete data from database//
-  // function deleteUser(userId) {
-  //   fetch(`http://localhost:3000/users/${userId}`, {
-  //     method: "DELETE",
-  //   }).then((res) => {
-  //     res.json().then(() => {
-  //       const newUsers = users.filter((user) => user.id !== userId);
-  //       setUsers(newUsers);
-  //       getUsers();
-  //     });
-  //   });
-  // }
+  //this function is called at a first time and whenever delete api is done//
+  function getUsers() {
+    fetch("http://localhost:3000/users")
+      .then((res) => res.json())
+      .then((userData) => setUsers(userData));
+  }
+
+  // Implementing Delete method to delete data from database//
+  function deleteUser(userId) {
+    fetch(`http://localhost:3000/users/${userId}`, {
+      method: "DELETE",
+    }).then((res) => {
+      res.json().then(() => {
+        const newUsers = users.filter((user) => user.id !== userId);
+        setUsers(newUsers);
+        getUsers();
+      });
+    });
+  }
 
   return (
     <div className="container">

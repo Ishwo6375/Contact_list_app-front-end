@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -10,37 +10,9 @@ import Navbar from "./components/Navbar/Navbar";
 import AddUserForm from "./components/UserForm/AddUserForm";
 import EditUserForm from "./components/UserForm/EditUserForm";
 
-
-
-
 function App() {
-   const [users, setUsers] = useState([]);
 
-  //fetch data from json server// GET method
-  
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  //this function is called at a first time and whenever delete api is done//
-  function getUsers() {
-    fetch("http://localhost:3000/users")
-      .then((res) => res.json())
-      .then((userData) => setUsers(userData));
-  }
-    
-     function deleteUser(userId) {
-    fetch(`http://localhost:3000/users/${userId}`, {
-      method: "DELETE",
-    }).then((res) => {
-      res.json().then(() => {
-        const newUsers = users.filter((user) => user.id !== userId);
-        setUsers(newUsers);
-        getUsers();
-      });
-    });
-  }
-
+  //setting initial value as empty string to hold form data//
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -49,9 +21,8 @@ function App() {
   });
 
   function onHandleChange(e) {
-    setUser({...user, [e.target.name]: e.target.value });
+    setUser({ ...user, [e.target.name]: e.target.value });
   }
-  
 
   //Implementing POST method to add Employee
   function onSubmitUser(e) {
@@ -77,19 +48,13 @@ function App() {
       });
   }
 
-  
-
-
- 
- 
-
   return (
     <Router>
       <div className="App">
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home deleteUser={deleteUser} users={users}/>
+            <Home />
           </Route>
           <Route exact path="/about">
             <About />
@@ -99,17 +64,17 @@ function App() {
           </Route>
           <Route exact path="/UserForm/add">
             <AddUserForm
-              // onHandleChange={onHandleChange}
-              // user={user}
-              // onSubmitUser={onSubmitUser}
+              onHandleChange={onHandleChange}
+              user={user}
+              onSubmitUser={onSubmitUser}
             />
           </Route>
           <Route exact path="/UserForm/edit/:id">
-            <EditUserForm 
+            <EditUserForm
             // onHandleChange={onHandleChange}
             // user={user}
-           
-             />
+            // onSubmitUser={onSubmitUser}
+            />
           </Route>
         </Switch>
       </div>
