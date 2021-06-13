@@ -1,39 +1,9 @@
-// import React from "react";
 import React  from "react";
 
 
 function AddUserForm({onHandleChange, user, onSubmitUser}) {
   //Array desturcting name, username, email and phone to user//
   const {  name, username, email, phone } = user;
-
-  // function onHandleChange(e) {
-  //   setUsers({...user, [e.target.name]: e.target.value });
-  // }
-  
-
-  // //Implementing POST method to add Employee
-  // function onSubmitUser(e) {
-  //   e.preventDefault();
-  //   const config = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: user.name,
-  //       username: user.username,
-  //       email: user.email,
-  //       phone: user.phone,
-  //     }),
-  //   };
-
-  //   fetch("http://localhost:3000/users", config)
-  //     .then((res) => res.json())
-  //     .then((newUser) => {
-  //       const newUsers = [user, newUser];
-  //       setUsers(newUsers);
-  //     });
-  // }
 
 
   return (

@@ -12,14 +12,14 @@ function Home() {
 
   //this function is called at a first time and whenever delete api is done//
   function getUsers() {
-    fetch("http://localhost:3000/users")
+    fetch("https://contact-list-phase2-app.herokuapp.com/users")
       .then((res) => res.json())
       .then((userData) => setUsers(userData));
   }
 
   // Implementing Delete method to delete data from database//
   function deleteUser(userId) {
-    fetch(`http://localhost:3000/users/${userId}`, {
+    fetch(`https://contact-list-phase2-app.herokuapp.com/users/${userId}`, {
       method: "DELETE",
     }).then((res) => {
       res.json().then(() => {

@@ -40,7 +40,7 @@ function App() {
       }),
     };
 
-    fetch("http://localhost:3000/users", config)
+    fetch("https://contact-list-phase2-app.herokuapp.com/users", config)
       .then((res) => res.json())
       .then((newUser) => {
         const newUsers = [user, newUser];

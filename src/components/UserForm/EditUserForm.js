@@ -23,27 +23,17 @@ function EditUserForm() {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
 
-  // useEffect(() => {
-  //   loadUser();
-  // }, []);
-
   const onSubmitUser = async (e) => {
     e.preventDefault();
-    await axios.patch(`http://localhost:3000/users/${id}`, user);
+    await axios.patch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`, user);
   };
-
-  // const loadUser = async () => {
-  //   const result = await axios.get(`http://localhost:3000/users/${id}`);
-  //   setUser(result.data);
-  // };
-
 
   return (
     <div className="div-container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="add-hire">Edit Employee</h2>
 
-        <form onSubmit={(e) => onSubmitUser(e)}>
+        <form onSubmit={onSubmitUser}>
           <div>
             <input
               className="my-2"
