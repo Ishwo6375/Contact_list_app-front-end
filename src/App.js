@@ -71,7 +71,7 @@ function App() {
           </Route>
           <Route exact path="/UserForm/edit/:id">
             <EditUserForm
-            // onHandleChange={onHandleChange}
+            onHandleChange={onHandleChange}
             // user={user}
             // onSubmitUser={onSubmitUser}
             />
