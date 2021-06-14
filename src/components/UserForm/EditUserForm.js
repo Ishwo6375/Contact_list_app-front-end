@@ -1,6 +1,5 @@
 // import React from "react";
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function EditUserForm() {
@@ -22,11 +21,34 @@ function EditUserForm() {
   function onHandleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
+  
+   useEffect(() => {
+    showUserInEditForm();
+  }, []);
 
-  const onSubmitEditUser = async (e) => {
-    e.preventDefault();
-    await axios.patch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`, formData);
-  };
+
+  function showUserInEditForm() {
+    fetch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`)
+      .then((res) => res.json())
+      .then((userData) => setFormData(userData));
+  }
+
+   //Implementing PATCH method to edit data//
+   function onSubmitEditUser(e){
+      e.preventDefault();
+       fetch(`https://contact-list-phase2-app.herokuapp.com/users/${id}`, {
+         method: "PATCH",
+         headers:{
+           'Accept': 'application/json',
+           'content-Type': 'application/json'
+         },
+         body:JSON.stringify(formData)
+       })
+       .then(res => res.json())
+       .then((res) => {
+         showUserInEditForm()
+       })
+   }
 
   return (
     <div className="div-container">
