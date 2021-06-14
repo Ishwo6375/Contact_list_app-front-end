@@ -1,5 +1,6 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function EditUserForm() {
@@ -51,6 +52,7 @@ function EditUserForm() {
    }
 
   return (
+    <>
     <div className="div-container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="add-hire">Edit Employee</h2>
@@ -104,6 +106,13 @@ function EditUserForm() {
         </form>
       </div>
     </div>
+
+    <br />
+
+      <Link className="btn btn-danger mx-3" to="/employee">
+         Back to Records
+      </Link>
+    </>
   );
 }
 

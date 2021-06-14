@@ -1,17 +1,34 @@
-body{
-    background-color: rgb(212, 196, 176);
+.div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(249, 255, 255, 0.465);
 }
 
-h1{
-    font-family: 'Times New Roman', Times, serif;
+.home-para{
     font-weight: bold;
-    color: rgb(83, 53, 53);
+    font-size: 25px;
+    font-family: monospace;
+    align-items: justify;
+    color:rgb(44, 49, 49)
+
 }
 
-h1:hover{
+.home-heading {
+  font-size: 2.5rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  margin: 20px 0px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.home-heading:hover{
     color: rgb(86, 95, 221);
 }
 
-.table-css{
-    font-weight: bold;
+.home-img {
+  width: 40%;
+  margin-bottom: 2rem;
+   margin: 30px 0px;
 }

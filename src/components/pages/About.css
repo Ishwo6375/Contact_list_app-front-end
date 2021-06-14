@@ -1,15 +1,19 @@
-.div-about{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(71, 67, 62);
-    color:white;
-    align-items: center;
-    /* width: 50%; */
+.div-about {
+  display: flex;
+  justify-content: center;
 
+  color: rgb(58, 117, 194);
+  align-items: center;
 }
 
-.heading{
-    display: flex;
-    justify-content: center;
-    color: cornflowerblue;
+.about-para {
+  font-weight: bold;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  color: rgb(41, 44, 49);
 }

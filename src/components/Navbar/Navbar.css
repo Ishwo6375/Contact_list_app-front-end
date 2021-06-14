@@ -1,7 +1,7 @@
 .nav-bar{
     border: 1px solid rgb(47, 36, 36);
     background-color: rgb(35, 39, 39);
-    padding: 10px;
+    padding: 15px;
     
 }
 .nav-heading{
@@ -21,4 +21,5 @@
     text-decoration: none;
     color: rgb(239, 240, 241);
     font-weight: bold;
+    margin:25px;
 }

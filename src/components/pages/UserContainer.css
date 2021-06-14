@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(233, 224, 214);
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: rgb(83, 53, 53);
+}
+
+h1:hover {
+  color: rgb(86, 95, 221);
+}
+
+.table-css {
+  font-weight: bold;
+}

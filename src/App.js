@@ -9,9 +9,9 @@ import Contact from "./components/pages/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import AddUserForm from "./components/UserForm/AddUserForm";
 import EditUserForm from "./components/UserForm/EditUserForm";
+import UserContainer from "./components/pages/UserContainer";
 
 function App() {
-
   //setting initial value as empty string to hold form data//
   const [formData, setformData] = useState({
     name: "",
@@ -56,6 +56,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/employee">
+            <UserContainer />
+          </Route>
           <Route exact path="/about">
             <About />
           </Route>
@@ -71,9 +74,9 @@ function App() {
           </Route>
           <Route exact path="/UserForm/edit/:id">
             <EditUserForm
-            onHandleChange={onHandleChange}
-            // user={user}
-            // onSubmitUser={onSubmitUser}
+              // onHandleChange={onHandleChange}
+              // user={user}
+              // onSubmitUser={onSubmitUser}
             />
           </Route>
         </Switch>
