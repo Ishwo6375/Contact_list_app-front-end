@@ -45,8 +45,8 @@ function EditUserForm() {
          body:JSON.stringify(formData)
        })
        .then(res => res.json())
-       .then((res) => {
-         showUserInEditForm()
+       .then((userData) => {
+         setFormData(userData)
        })
    }
 
