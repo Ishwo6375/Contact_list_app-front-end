@@ -60,6 +60,10 @@ function UserContainer() {
                     <Link className="btn btn-primary mx-3" to={`/UserForm/edit/${user.id}`}>
                       Edit
                     </Link>
+                    <Link className="btn btn-primary mx-3" to={`/UserForm/viewuser/${user.id}`}>
+                      View
+                    </Link>
+
                     <button onClick={() => deleteUser(user.id)} class="btn btn-danger mx-2">Delete</button>
                   </td>
                 </tr>

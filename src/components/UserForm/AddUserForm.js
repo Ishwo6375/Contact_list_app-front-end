@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function AddUserForm({ onHandleChange, formData, onSubmitAddUser }) {
   //Array desturcting name, username, email and phone to formData//
-  const { name, username, email, phone } = formData;
+  const { name, username, email, phone, image } = formData;
 
   return (
     <>
@@ -52,9 +52,19 @@ function AddUserForm({ onHandleChange, formData, onSubmitAddUser }) {
                 placeholder="Enter Phone Number"
                 name="phone"
                 value={phone}
-                onChange={onHandleChange}
-              />
+                onChange={onHandleChange} /> 
             </div>
+
+              <div>
+              <input
+                className="my-2"
+                type="text"
+                placeholder="Enter Image URL"
+                name="image"
+                value={image}
+                onChange={onHandleChange} /> 
+            </div>
+
 
             <button className="my-2 btn-primary">Add Employee</button>
           </form>
@@ -64,7 +74,7 @@ function AddUserForm({ onHandleChange, formData, onSubmitAddUser }) {
       <br />
 
       <Link className="btn btn-danger mx-3" to="/employee">
-         Back to Records
+        Back to Records
       </Link>
     </>
   );

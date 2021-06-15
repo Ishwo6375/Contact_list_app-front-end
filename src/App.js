@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AddUserForm from "./components/UserForm/AddUserForm";
 import EditUserForm from "./components/UserForm/EditUserForm";
 import UserContainer from "./components/pages/UserContainer";
+import UserProfile from "./components/UserForm/UserProfile";
 
 function App() {
   //setting initial value as empty string to hold form data//
@@ -78,6 +79,9 @@ function App() {
               // user={user}
               // onSubmitUser={onSubmitUser}
             />
+          </Route>
+            <Route exact path="/UserForm/viewuser/:id">
+            <UserProfile />
           </Route>
         </Switch>
       </div>

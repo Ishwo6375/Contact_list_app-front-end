@@ -17,7 +17,7 @@ function EditUserForm() {
 
  
   //Array desturcting name, username, email and phone to formData//
-  const { name, username, email, phone } = formData;
+  const { name, username, email, phone, image } = formData;
 
   function onHandleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,6 +25,7 @@ function EditUserForm() {
   
    useEffect(() => {
     showUserInEditForm();
+    // eslint-disable-next-line 
   }, []);
 
 
@@ -101,6 +102,15 @@ function EditUserForm() {
               onChange={onHandleChange}
             />
           </div>
+            <div>
+              <input
+                className="my-2"
+                type="text"
+                placeholder="Enter Image URL"
+                name="image"
+                value={image}
+                onChange={onHandleChange} /> 
+            </div>
 
           <button className="my-2 btn-primary">Update Employee</button>
         </form>

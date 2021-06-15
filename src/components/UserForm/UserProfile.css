@@ -1,0 +1,32 @@
+.user-profile {
+  display: flex;
+  justify-content: center;
+}
+
+.user-details {
+  margin: 10px 20px;
+}
+
+.user-heading {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(83, 146, 21);
+  font-family: monospace;
+}
+
+.user-list {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(197, 131, 54);
+  /* border:2px solid black; */
+  padding: 13px;
+  margin: 20px 50px;
+  color: bisque;
+  font-family: sans-serif;
+}
+
+.user-img {
+  max-width: 400px;
+  margin:30px 100px;
+  border-radius: 20%;
+}
