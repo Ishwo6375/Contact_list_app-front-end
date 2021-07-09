@@ -10,8 +10,8 @@ function NavBar() {
         <NavLink className="nav-items" to="/">
           Home
         </NavLink>
-         <NavLink className="nav-items" to="/employee">
-         Employee Records
+        <NavLink className="nav-items" to="/employee">
+          Employee Records
         </NavLink>
         <NavLink className="nav-items" to="/about">
           About

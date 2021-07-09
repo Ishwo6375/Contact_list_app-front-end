@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./UserProfile.css";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function UserProfile() {
   const { id } = useParams();
@@ -16,14 +17,16 @@ function UserProfile() {
     <>
       <div className="container py-4">
         <ul className="list-group w-50">
-     
           <h2 className="user-heading">Name: {user.name}</h2> <br />
-          <img className="user-img " src={user.image} />
+          <img className="user-img " src={user.image} alt="user-pic" />
           <li className="user-list">User Name: {user.username}</li>
           <li className="user-list">Email: {user.email}</li>
           <li className="user-list">Phone: {user.phone}</li>
         </ul>
       </div>
+      <Link className="btn btn-danger  back-to" to="/employee">
+        Back to Records
+      </Link>
     </>
   );
 }

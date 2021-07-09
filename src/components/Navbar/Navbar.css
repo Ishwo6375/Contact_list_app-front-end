@@ -1,25 +1,23 @@
-.nav-bar{
-    border: 1px solid rgb(47, 36, 36);
-    background-color: rgb(35, 39, 39);
-    padding: 15px;
-    
+.nav-bar {
+  border: 1px solid rgb(47, 36, 36);
+  background-color: rgb(35, 39, 39);
+  padding: 15px;
 }
-.nav-heading{
-    text-align: center;
-    color:rgb(237, 236, 245);
-    font-weight: bold;
-    font-family: serif;
-    
+.nav-heading {
+  text-align: center;
+  color: rgb(237, 236, 245);
+  font-weight: bold;
+  font-family: serif;
 }
 
-.nav-heading:hover{
-    color:rgb(189, 230, 11);
+.nav-heading:hover {
+  color: rgb(189, 230, 11);
 }
 
-.nav-items{
-    margin: 10px;
-    text-decoration: none;
-    color: rgb(239, 240, 241);
-    font-weight: bold;
-    margin:25px;
+.nav-items {
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(239, 240, 241);
+  font-weight: bold;
+  margin: 25px;
 }

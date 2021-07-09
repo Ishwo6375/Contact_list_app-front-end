@@ -20,9 +20,9 @@ function About() {
             <br />
             was created for Flatiron School Amazon software developement Course.
           </p>
-           
-           <br />
-            <br />
+
+          <br />
+          <br />
           <h2>App Created By:</h2>
 
           <p className="about-para">
@@ -31,24 +31,21 @@ function About() {
             Job Title: Flatiron School student
           </p>
 
-           <br />
-            <br />
+          <br />
+          <br />
           <h2>App Created For:</h2>
-        
 
           <p className="about-para">
-           Flatiron School Amazon Software Development Program
-           <br />
-           Phase 2 React Project
-          </p>
-          
-           <br />
+            Flatiron School Amazon Software Development Program
             <br />
+            Phase 2 React Project
+          </p>
+
+          <br />
+          <br />
           <h2>App version</h2>
 
-          <p className="about-para">
-            version: 0.0.01
-          </p>
+          <p className="about-para">version: 0.0.01</p>
         </div>
       </div>
     </>

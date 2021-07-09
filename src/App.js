@@ -19,6 +19,7 @@ function App() {
     username: "",
     email: "",
     phone: "",
+    image: ""
   });
 
   function onHandleChange(e) {
@@ -38,6 +39,7 @@ function App() {
         username: formData.username,
         email: formData.email,
         phone: formData.phone,
+        image: formData.image
       }),
     };
 
