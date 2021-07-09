@@ -65,7 +65,8 @@ function UserContainer() {
                 value.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 value.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 value.phone.toLowerCase().includes(searchTerm.toLowerCase())
-              ){
+              )
+              {
                 return value
               }
             }).map(
@@ -88,7 +89,7 @@ function UserContainer() {
                       Edit
                     </Link>
                     <Link
-                      className="btn btn-primary mx-3"
+                      className="btn btn-outline-success mx-3"
                       to={`/UserForm/viewuser/${user.id}`}
                     >
                       View
